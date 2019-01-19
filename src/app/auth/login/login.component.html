@@ -12,6 +12,7 @@
     <mat-form-field  appearance="outline">
       <input matInput name="password" type="password" formControlName="password">
       <mat-label>Password</mat-label>
+      <mat-icon matSuffix>vpn_lock</mat-icon>
       <mat-error *ngIf="oLoginForm.controls.password.errors">
           <mat-error *ngIf="oLoginForm.controls.password.errors.required">required</mat-error>
           <mat-error *ngIf="oLoginForm.controls.password.errors.minlength">Need 5 characters</mat-error>
