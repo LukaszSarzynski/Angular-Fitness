@@ -1,3 +1,18 @@
-<p>
-  login works!
-</p>
+<section class="login-form">
+  <form #oForm="ngForm" (ngSubmit)="onSubmit(oForm)" fxLayoutGap="10px" fxLayout="column" fxLayoutAlign="center center" >
+    <mat-form-field appearance="outline">
+      <input matInput ngModel name="login" type="email" #oLogin="ngModel" email required>
+      <mat-label>Login</mat-label>
+      <mat-icon matSuffix>email</mat-icon>
+      <mat-error *ngIf="oLogin.hasError('required')">required</mat-error>
+      <mat-error *ngIf="!oLogin.hasError('required')">wrong login</mat-error>
+    </mat-form-field>
+    <mat-form-field apperance="outline">
+      <input matInput ngModel name="password" type="password" #oPassword="ngModel" minlength="5" password required>
+      <mat-label>Password</mat-label>
+      <mat-error *ngIf="oLogin.hasError('required')">required</mat-error>
+      <mat-error *ngIf="!oLogin.hasError('required')">Need 5 characters</mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit" [disabled]="oForm.invalid">Login</button>
+  </form>
+</section>
