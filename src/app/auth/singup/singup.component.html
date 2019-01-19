@@ -1,3 +1,28 @@
-<p>
-  singup works!
-</p>
+<section class="singup-form">
+  <form #oForm="ngForm" (ngSubmit)="onSubmit(form)" #form="ngForm" fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="center center" >
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input type="email" #oEmailInput="ngModel" matInput ngModel name="email" email required>
+      <mat-icon matSuffix>email</mat-icon>
+      <mat-error *ngIf="oEmailInput.hasError('required')">required</mat-error>
+      <mat-error *ngIf="!oEmailInput.hasError('required')">Wrong email</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline" hintLabel="Need 5 characters">
+      <mat-label>Password</mat-label>
+      <input type="password" #oPassInput="ngModel" matInput ngModel name="password" minlength="5" required>
+      <mat-icon matSuffix>vpn_lock</mat-icon>
+      <mat-hint align="end">{{ oPassInput.value?.length }} / 5</mat-hint>
+      <mat-error *ngIf="oPassInput.hasError('required')">required</mat-error>
+      <mat-error *ngIf="!oPassInput.hasError('required')">Need 5 characters</mat-error>
+    </mat-form-field>
+    <mat-form-field  appearance="outline">
+      <mat-label>Birthday date</mat-label>
+      <input [matDatepicker]="choiceDate" #oBirthday="ngModel" [max]="maxDay" matInput ngModel name="birthday"  required>
+      <mat-datepicker #choiceDate></mat-datepicker>
+      <mat-datepicker-toggle matSuffix [for]="choiceDate"></mat-datepicker-toggle>
+      <mat-error>Wrong date</mat-error>
+    </mat-form-field>
+    <mat-checkbox ngModel name="agree" color="primary"  required>Agree to Terms and Conditions</mat-checkbox>
+    <button type="submit" mat-raised-button color="primary" [disabled]="oForm.invalid">Submint</button>
+  </form>
+</section>

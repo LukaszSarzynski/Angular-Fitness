@@ -1,9 +1,12 @@
 import { NgModule } from '@angular/core';
-import {MatButtonModule} from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule, MatIconModule, MatFormFieldModule, MatInputModule,
+  MatDatepickerModule, MatNativeDateModule, MatCheckboxModule} from '@angular/material';
+
+const aNeededModule = [MatButtonModule, MatIconModule, MatFormFieldModule,
+   MatInputModule, MatDatepickerModule, MatNativeDateModule, MatCheckboxModule];
 
 @NgModule({
-  imports: [MatButtonModule, MatIconModule ],
-  exports: [MatButtonModule, MatIconModule ]
+  imports: aNeededModule,
+  exports: aNeededModule
 })
 export class MaterialDesignModule { }
