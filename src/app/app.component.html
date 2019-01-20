@@ -5,15 +5,17 @@
   </mat-sidenav>
   <mat-sidenav-content>
       <mat-toolbar color="primary">
-        <button matSuffix mat-icon-button (click)="sitenav.toggle()" ><mat-icon>menu</mat-icon></button>
+
         Title
-        <div fxFlex fxLayout fxLayoutAlign="end end">
+        <div fxFlex></div>
+        <div fxHide.xs>
           <ul fxLayout fxLayoutGap="10px" class="nav-items">
             <li><a routerLink="singup">singup</a></li>
             <li><a routerLink="login">login</a></li>
             <li><a routerLink="training">training</a></li>
           </ul>
         </div>
+        <button fxHide.gt-xs matSuffix mat-icon-button (click)="sitenav.toggle()" ><mat-icon>menu</mat-icon></button>
 
       </mat-toolbar>
       <main>
