@@ -1,3 +1,22 @@
-<p>
-  new-training works!
-</p>
+<section class="new-training" fxLayout fxLayoutAlign="center">
+  <mat-card fxFlex.xs="100%" fxFlex="400px">
+    <mat-card-title fxLayoutAlign="center">First exercise</mat-card-title>
+    <mat-card-content fxLayoutAlign="center">You can easy click and start this first excrcise.</mat-card-content>
+    <mat-card-content>
+        <mat-form-field appearance="outline">
+            <mat-label>Choice your exercise</mat-label>
+            <mat-select>
+                <mat-option value="ex1">First</mat-option>
+                <mat-option value="ex2">Second</mat-option>
+                <mat-option value="ex3">Third</mat-option>
+                <mat-option value="ex4">Four</mat-option>
+              </mat-select>
+        </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions fxLayoutAlign="center">
+      <button mat-icon-button (click)="emmitStartTraining()" ><mat-icon>play_circle_outline</mat-icon></button>
+    </mat-card-actions>
+  </mat-card>
+</section>
+
+
