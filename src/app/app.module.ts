@@ -16,6 +16,7 @@ import { PastTrainingComponent } from './training/past-training/past-training.co
 import { WelcomeComponent } from './training/welcome/welcome.component';
 import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
 import { HeaderComponent } from './navigation/header/header.component';
+import { StopTrainingComponent } from './training/current-training/stop-training.componet';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { HeaderComponent } from './navigation/header/header.component';
     PastTrainingComponent,
     WelcomeComponent,
     SidenavListComponent,
-    HeaderComponent
+    HeaderComponent,
+    StopTrainingComponent
   ],
   imports: [
     BrowserModule,
@@ -40,6 +42,7 @@ import { HeaderComponent } from './navigation/header/header.component';
     ReactiveFormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [StopTrainingComponent]
 })
 export class AppModule { }

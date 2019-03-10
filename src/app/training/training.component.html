@@ -7,4 +7,4 @@
   </mat-tab>
 </mat-tab-group>
 
-<app-current-training *ngIf="bTrainingIsRunning"></app-current-training>
+<app-current-training *ngIf="bTrainingIsRunning" (eeTrainingExit)="bTrainingIsRunning = false"></app-current-training>
