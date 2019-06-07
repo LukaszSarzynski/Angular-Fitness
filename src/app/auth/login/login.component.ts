@@ -1,3 +1,5 @@
+import { AuthService } from './../auth.service';
+import { AuthData } from './../auth-data.model';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
@@ -10,7 +12,7 @@ export class LoginComponent implements OnInit {
 
   oLoginForm: FormGroup;
 
-  constructor() { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit() {
     this.oLoginForm = new FormGroup({
@@ -22,6 +24,11 @@ export class LoginComponent implements OnInit {
   onSubmit() {
 
     console.log(this.oLoginForm);
+
+    this.authService.login({
+      email: this.oLoginForm.value.login,
+      password: this.oLoginForm.value.password
+    })
   }
 
 }

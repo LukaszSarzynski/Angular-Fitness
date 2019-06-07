@@ -1,3 +1,4 @@
+import { AuthService } from './../auth.service';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
@@ -10,7 +11,7 @@ export class SingupComponent implements OnInit {
 
   maxDay: Date;
 
-  constructor() { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit() {
     this.maxDay = new Date();
@@ -19,7 +20,10 @@ export class SingupComponent implements OnInit {
 
   onSubmit(oForm: NgForm) {
     if (oForm.valid) {
-      console.log(oForm);
+      this.authService.registerUser({
+        email: oForm.value.email,
+        password: oForm.value.password
+      });
 
     }
   }
