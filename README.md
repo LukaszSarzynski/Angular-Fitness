@@ -1,8 +1,8 @@
 # Angular-Fitness
-Angular Material 7 sandbox 
+Angular Material 8 sandbox 
 
 
-build prod snapshot from 2019-01-19 
+sample snapshot from 2019-01-19 (Angular Material vesion 7 inside)
 
 * [login form](https://lukaszsarzynski.github.io/Angular-Fitness/Angular-Fitness/login)
 * [singup form](https://lukaszsarzynski.github.io/Angular-Fitness/Angular-Fitness/singup)
